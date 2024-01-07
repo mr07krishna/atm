@@ -1,9 +1,38 @@
-student = ("bro",21,"male")
+import random
 
- print(student.count("bro"))
- print(student.count("male"))
+while True:
+    choices = ["rock", "paper", "scissors"]
+    computer = random.choice(choices)
+    player = None
 
- for X in student:
-     print(X)
-     if "bro"  in student:
-         print("bro is here!")
+    while player not in choices:
+        player = input("rock, paper, or scissors? : ").lower()
+
+    print("Computer:", computer)
+    print("Player:", player)
+
+    if player == computer:
+        print("Tie!")
+
+    elif player == "paper":
+        if computer == "scissors":
+            print("You lose!")
+        elif computer == "rock":
+            print("You win!")
+
+    elif player == "scissors":
+        if computer == "rock":
+            print("You lose!")
+        elif computer == "paper":
+            print("You win!")
+
+    elif player == "rock":
+        if computer == "paper":
+            print("You lose!")
+        elif computer == "scissors":
+            print("You win!")
+    player_again = input("player again ? (yes/no): ").lower()
+    if player_again !="yes":
+        break
+print("BYE!See you again")
+
